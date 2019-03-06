@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Image Guess </title>
+</head>
+<body>
+	<style type="text/css">
+		body { margin: 20px; }	
+		img { margin: 20px;  }
+	</style>
+	<script type="text/javascript">
+		window.onload = init;
+		
+		function init(){
+
+			var images = document.getElementsByTagName("img");
+			for (var i = 0; i < images.length; i++ ){
+			images[i].onclick = showImage;	
+			}
+			
+				}
+
+		function showImage(eventObj) {
+
+			var image = eventObj.target;
+			var name =  image.id + ".jpg";
+			image.src = name;
+			image.onclick = bluragain;
+
+		}
+
+		function bluragain(eventObj) {
+
+			var image = eventObj.target;
+			var name =  image.id + "blur.jpg";
+			image.src = name;
+			image.onclick = init;
+		}
+
+
+	</script>
+	<img id="zero" src="zeroblur.jpg">
+	<img id="one" src="oneblur.jpg">
+	<img id="two" src="twoblur.jpg">
+	<img id="three" src="threeblur.jpg">
+	<img id="four" src="fourblur.jpg">
+	<img id="five" src="fiveblur.jpg">
+	
+</body>
+</html>
