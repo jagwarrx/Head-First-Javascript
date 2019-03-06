@@ -25,13 +25,13 @@
 			var image = eventObj.target;
 			var name =  image.id + ".jpg";
 			image.src = name;
-			image.onclick = bluragain;
+			
+			setTimeout(bluragain, 2000, image);
 
 		}
 
-		function bluragain(eventObj) {
+		function bluragain(image) {
 
-			var image = eventObj.target;
 			var name =  image.id + "blur.jpg";
 			image.src = name;
 			image.onclick = init;
